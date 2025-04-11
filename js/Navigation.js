@@ -1,8 +1,8 @@
 import { categoryNames } from "./utils.js";
 import { categoryIds } from "./utils.js";
 
-export const Navigation = ({ onNavClick, currentCategory, className = '' }) => (
-	<nav className={`grid navigation ${className}`}>
+export const Navigation = ({ onNavClick, currentCategory, className = '', placement = 'header' }) => (
+	<nav className={`grid navigation navigation--${placement}`}>
 	  <a className="navigation__logo" data-href="index" href="#">
 		<img className="navigation__logo-image" src="./images/logo.png" alt="Логотип" />
 	  </a>

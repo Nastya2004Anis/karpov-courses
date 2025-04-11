@@ -25,7 +25,7 @@ export const App = () => {
 	  <React.Fragment>
 		<header className="header">
 		  <div className="container">
-			<Navigation onNavClick={onNavClick} currentCategory={category} className="header__navigation" />
+			<Navigation placement="header" onNavClick={onNavClick} currentCategory={category} className="header__navigation" />
 		  </div>
 		</header>
   
@@ -35,7 +35,7 @@ export const App = () => {
   
 		<footer className="footer">
 		  <div className="container">
-			<Navigation onNavClick={onNavClick} currentCategory={category} className="footer__navigation" />
+			<Navigation placement="footer" onNavClick={onNavClick} currentCategory={category} className="footer__navigation" />
 			<div className="footer__bottom">
 			  <p className="footer__text">
 				Сделано на Frontend курсе в{' '}
