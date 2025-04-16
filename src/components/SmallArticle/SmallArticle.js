@@ -1,3 +1,6 @@
+import React from 'react'; 
+import './SmallArticles.css';
+
 export const SmallArticle = ({ title, source, date }) => (
 	<article className="small-article">
 	  <h2 className="small-article__title">{title}</h2>

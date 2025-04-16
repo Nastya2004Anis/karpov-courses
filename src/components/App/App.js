@@ -1,6 +1,9 @@
-import { categoryIds } from "./utils.js";
-import { Navigation } from "./Navigation.js";
-import { Articles } from "./Articles.js";
+import { categoryIds } from "../../utils.js";
+import { Navigation } from "../Navigation/Navigation.js";
+import { Articles } from "../Articles/Articles.js";
+import React from 'react'; //директива для webpack. надо пойти в node modules 
+import './App.css';
+
 
 export const App = () => {
 	const [category, setCategory] = React.useState('index');
