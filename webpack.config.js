@@ -2,8 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development', // Режим разработки
-  entry: './src/script.js', // Точка входа
+  //mode: 'development', // Режим разработки
+  mode: process.env.NODE_ENV || 'production',
+  entry: './src/script.tsx', // Точка входа
 
   output: {
     path: path.resolve(__dirname, 'dist'), // Папка сборки
@@ -36,10 +37,19 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif|svg)$/i, // Подключение изображений
         type: 'asset/resource',
+      },  {
+        test: /\.(ts|tsx)$/, 
+        use: ['ts-loader'],
+        exclude: /node_modules/,
       }
+
     ],
   },
-
+  
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js']
+  },
+  
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html', // Шаблон HTML-файла

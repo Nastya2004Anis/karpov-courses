@@ -1,0 +1,25 @@
+// {
+//     "compilerOptions": {
+//         "strict": true,
+//         "esModuleInterop": true,
+//         "jsx": "react"
+//     },
+
+//     "include": ["src"],
+//     "exclude": ["node_modules", "dist"]
+// }
+
+{
+    "compilerOptions": {
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "jsx": "react",
+      "baseUrl": "./src", // <--- это позволит писать import из "components/App/App"
+      "paths": {
+        "*": ["*", "src/*"]
+      }
+    }
+  }
+  
