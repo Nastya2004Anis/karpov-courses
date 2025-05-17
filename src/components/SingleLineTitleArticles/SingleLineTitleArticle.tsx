@@ -1,25 +1,27 @@
 import React, { FC } from "react";
+import { Link } from 'react-router-dom';
 import "./SingleLineTitleArticle.css";
 
 interface Props {
+  id: number;
   image: string;
   title: string;
   text: string;
   category: string;
   source: string;
-  onClick: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
 export const SingleLineTitleArticle: FC<Props> = ({
+  id,
   image,
   title,
   source,
   text,
   category,
-  onClick,
 }) => {
   return (
-    <article className="single-line-title-article" onClick={onClick}>
+    <Link to = {'article/${id}'} className="single-line-title-article">
+    <article className="single-line-title-article__container">
       <img className="single-line-title-article__image" src={image || undefined} />
       <span className="article-category single-line-title-article__category">
         {category}
@@ -30,5 +32,6 @@ export const SingleLineTitleArticle: FC<Props> = ({
         {source}
       </span>
     </article>
+    </Link>
   );
 };

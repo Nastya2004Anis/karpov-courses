@@ -1,12 +1,16 @@
 .small-article {
     margin-bottom: 35px;
-    border-left: 9px solid var(--color-primary);
-    padding-left: 11px;
     cursor: pointer; 
+    display: block;
 }
 
 .small-article :last-child {
     margin-bottom: 0;
+}
+
+.small-article__container {
+    border-left: 9px solid var(--color-primary);
+    padding-left: 11px;
 }
 
 .small-article__title {

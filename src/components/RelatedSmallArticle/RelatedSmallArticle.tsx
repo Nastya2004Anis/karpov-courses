@@ -1,23 +1,25 @@
 import React, { FC } from "react";
+import { Link } from 'react-router-dom';
 import "./RelatedSmallArticle.css";
 
 interface Props {
+  id: number;
   image: string;
   title: string;
   category: string;
   source: string;
-  onClick: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
 export const RelatedSmallArticle: FC<Props> = ({
+  id,
   image,
   category,
   source,
   title,
-  onClick,
 }) => {
   return (
-    <article className="related-small-article" onClick={onClick}>
+   <Link to = {`article/${id}` } className="related-small-article">
+    <article className="related-small-article__container" >
       <img className="related-small-article__image" src={image || undefined} />
       <div className="related-small-article__content">
         <span className="article-category related-small-article__category">
@@ -29,5 +31,6 @@ export const RelatedSmallArticle: FC<Props> = ({
         </span>
       </div>
     </article>
+   </Link>
   );
 };
